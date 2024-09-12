@@ -7,7 +7,7 @@ $result = mysqli_query($conn, $query);
 $all_datas = mysqli_fetch_all($result, 1);
 
 // echo "<pre>";
-// print_r($datas);
+// print_r($all_datas);
 // echo "</pre>";
 
 ?>
@@ -47,7 +47,7 @@ $all_datas = mysqli_fetch_all($result, 1);
                                 <td><?= empty($data['details']) ? '---' : (strlen($data['details']) >11 ? substr($data['details'],0,10) . '... ' : $data['details']) ?></td>
                                 <td>
                                     <div class="btn-group">
-                                        <a href="#" class="btn btn-primary btn-sm">Edit</a>
+                                        <a href="./edit_todo.php?id=<?= $data['id']?>" class="btn btn-primary btn-sm">Edit</a>
                                         <a href="./Controller/detele_controller.php?id=<?=$data['id']?>" class="btn btn-danger btn-sm">Delete</a>
                                     </div>
                                 </td>
